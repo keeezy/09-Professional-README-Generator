@@ -1,9 +1,9 @@
-// TODO: Include packages needed for this application
+// Variable packages needed for this application
 const inq = require("inquirer");
 const chalk = require("chalk");
 const fs = require("fs");
 
-// TODO: Create an array of questions for user input
+// Array of questions for user input
 const questions = [
     {
         type: "input",
@@ -43,8 +43,7 @@ const questions = [
         type: "list",
         name: "license",
         message: "What license is used?",
-        choices: ["A", "B", "C", "D"],
-        defualt: ["Z"],
+        choices: ["APACHE 2.0", "BSL 1.0", "The Perl License", "None"],
 
     },
     {
@@ -64,24 +63,37 @@ const questions = [
 
 ];
 
-// TODO: Create a function to write README file
+// Function to write README file
 const createReadme = (readme) => {
-    fs.writeFileSync("./README.md", `
-# ${readme.title}
+    // Creates badge for depending on user choice
+    let badge = "";
+    if (readme.license == "APACHE 2.0") {
+        badge = "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
+    } else if (readme.license == "BSL 1.0") {
+        badge = "[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)"
+    } else if (readme.license == "The Perl License") {
+        badge = "[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)"
+    }
+    
+    
+    fs.writeFileSync("./README.md",
+        `# ${readme.title}
+${badge}
 ## Description
 ${readme.description}
 ## Table of Contents
-- [Installation] (#installation)
-- [Usage] (#usage)
-- [License] (#license)
-- [Contributing] (#contributing)
-- [Tests] (#tests)
-- [Questions] (#questions)
+* [Installation] (#installation)
+* [Usage] (#usage)
+* [License] (#license)
+* [Contributing] (#contributing)
+* [Tests] (#tests)
+* [Questions] (#questions)
 ## Installation Instructions
 ${readme.installation}
 ## Usage
+${readme.usage}
 ## License
-${readme.license}
+This Project is licensed under: ${readme.license}
 ## Contributing
 ${readme.contributors}
 ## Tests
@@ -92,24 +104,24 @@ ${readme.contributors}
 
 
 `)
-};
 
 
+}
 
 // prompts
 inq
-.prompt(questions)
-.then((answers) => {
-    createReadme(answers)
-    console.log(chalk.green("Success"))
-})
+    .prompt(questions)
+    .then((answers) => {
+        createReadme(answers)
+        console.log(chalk.green("Success"))
+    })
 
-.catch((error) => {
-    if (error.isTtyError) {
-        console.error("Prompts could not be rendered in current environment")
-    } else {
-        console.error(`Something went wrong`, error)
-    }
-})
+    .catch((error) => {
+        if (error.isTtyError) {
+            console.error("Prompts could not be rendered in current environment")
+        } else {
+            console.error(`Something went wrong`, error)
+        }
+    })
 
 
