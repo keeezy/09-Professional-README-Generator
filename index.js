@@ -31,13 +31,13 @@ const questions = [
     },
     {
         type: "input",
-        name: "Credits",
+        name: "credits",
         message: "List your collaborators, if any, with links to their GitHub profiles."
 
     },
     {
         type: "input",
-        name: "License",
+        name: "license",
         message: "This lets other developers know what they can and cannot do with your project."
 
     },
@@ -46,6 +46,21 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+function createReadme(readme) {
+    fs.writeFileSync("./README.md", `
+    # ${readme.title}
+    ## Description
+    ${readme.description}
+    ## Installation Instructions
+    ${readme.installation}
+    ## Usage
+    ${readme.usage}
+    ## credits
+    ${readme.usage}
+    License
+    ${readme.license}
+    `)
+}
 
 
 inq
