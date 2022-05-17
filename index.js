@@ -1,14 +1,15 @@
 // TODO: Include packages needed for this application
 const inq = require("inquirer");
 const chalk = require("chalk");
-const fs = require("fs")
+const fs = require("fs");
 
 // TODO: Create an array of questions for user input
 const questions = [
     {
         type: "input",
         name: "title",
-        message: "What is the title of your project?"
+        message: "What is the title of your project?",
+        default: "Node Title"
 
     },
     {
@@ -46,30 +47,26 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-function createReadme(readme) {
-    fs.writeFileSync("./README.md", `
-    # ${readme.title}
-    ## Description
-    ${readme.description}
-    ## Installation Instructions
-    ${readme.installation}
-    ## Usage
-    ${readme.usage}
-    ## credits
-    ${readme.usage}
-    License
-    ${readme.license}
-    `)
-}
+const createReadme = (readme) => {
+    fs.writeFileSync("./README.md",
+    `# ${readme.title}
+## Description
+${readme.description}
+## Installation Instructions
+${readme.installation}
+## Deployed Link
+`
+)
+};
 
 
+
+// prompts
 inq
 .prompt(questions)
 .then((answers) => {
-    createReadme(answers.title)
+    createReadme(answers)
     console.log(chalk.green("Success"))
-
-    
 })
 
 .catch((error) => {
@@ -80,10 +77,4 @@ inq
     }
 })
 
-// // TODO: Create a function to initialize app
-// function init() {}
 
-// // Function call to initialize app
-// init();
-
-createReadme()
