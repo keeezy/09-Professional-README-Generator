@@ -9,54 +9,83 @@ const questions = [
         type: "input",
         name: "title",
         message: "What is the title of your project?",
-        default: "Node Title"
+        default: "GOATED project",
 
     },
     {
         type: "input",
         name: "description",
-        message: "Provide a short description explaining the what, why, and how of your project."
+        message: "Provide a short description explaining the what, why, and how of your project.",
+        default: "describe it to me pretty please",
 
     },
     {
         type: "input",
         name: "installation",
-        message: "What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running."
+        message: "What were the installation instructions?",
+        default: "This is how you do it....dun dun dun",
 
     },
     {
         type: "input",
         name: "usage",
-        message: "Provide instructions and examples for use. Include screenshots as needed."
+        message: "Provide usage information",
+        default: "Many things were done",
 
     },
     {
         type: "input",
-        name: "credits",
-        message: "List your collaborators, if any, with links to their GitHub profiles."
-
+        name: "contributors",
+        message: "List your collaborators, if any, with links to their GitHub profiles.",
+        default: "Elon Musk",
     },
     {
-        type: "input",
+        type: "list",
         name: "license",
-        message: "This lets other developers know what they can and cannot do with your project."
+        message: "What license is used?",
+        choices: ["A", "B", "C", "D"],
+        defualt: ["Z"],
 
     },
+    {
+        type: "input",
+        name: "username",
+        message: "What is your Github username?",
+        default: "ex... ladiesman217"
 
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your email address?",
+        default: "ex... ladiesman217@yahoo.com "
+
+    },
 
 ];
 
 // TODO: Create a function to write README file
 const createReadme = (readme) => {
-    fs.writeFileSync("./README.md",
-    `# ${readme.title}
+    fs.writeFileSync("./README.md", `
+# ${readme.title}
 ## Description
 ${readme.description}
+## Table of Contents
 ## Installation Instructions
 ${readme.installation}
-## Deployed Link
-`
-)
+## Usage
+## License
+${readme.license}
+## Contributing
+${readme.contributors}
+## Tests
+## Questions
+- https://github.com/${readme.username}
+- ${readme.email}
+
+
+
+`)
 };
 
 
