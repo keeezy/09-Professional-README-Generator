@@ -15,7 +15,29 @@ This application utilzes [Node JS inquirer Library](https://www.npmjs.com/packag
 Node JS, and dependencies
 
 ## Usage:
-![](https://media.giphy.com/media/YgnB7mNml0Ol3WUmPf/giphy.gif)
+Installed the necessary dependencies by using the integrated terminal:
+```javascript
+npm install
+```
+
+![](https://media.giphy.com/media/o35X8fwNwIKiQrsGDu/giphy.gif)
+
+Running the file in command line executes question prompts
+```javascript
+node index.js
+```
+
+![](https://media.giphy.com/media/j0CExIbSNQSBciAAjO/giphy.gif)
+
+![](https://media.giphy.com/media/hN3YiEfwoLhsPco8vO/giphy.gif)
+
+README file is created, writes data to a file replacing the file if it already exists.
+```javascript
+fs.writeFileSync("./README.md"
+```
+
+![](https://media.giphy.com/media/WgTBR9XVQCxjY7mDAT/giphy.gif)
+
 ## License:
 This Project is licensed under: ISC
 
@@ -29,6 +51,7 @@ If there are questions you can reach me via github/email. Listed below
 - https://github.com/keeezy
 - lazarokev@gmail.com
 
+### Acceptance Criteria
 ```md
 GIVEN a command-line application that accepts user input
 WHEN I am prompted for information about my application repository
