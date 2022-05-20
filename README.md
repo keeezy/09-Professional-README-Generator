@@ -11,7 +11,7 @@ This application utilzes [Node JS inquirer Library](https://www.npmjs.com/packag
 * [Tests](#tests)
 * [Questions](#questions)
 
-## Installation Instructions
+## Installation
 Node JS, and dependencies
 
 ## Usage:
