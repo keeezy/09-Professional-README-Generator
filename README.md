@@ -1,5 +1,7 @@
 # Professional README Generator
 
+[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)
+
 ## Description
 This application utilzes [Node JS inquirer Library](https://www.npmjs.com/package/inquirer) to dynamically generate a professional README from the command line. [Link to Demo](https://drive.google.com/file/d/19N1niMC-cc8zc7dZUgjuWy9u5CX25dt_/view?usp=sharing)
 
@@ -39,7 +41,7 @@ fs.writeFileSync("./README.md"
 ![](https://media.giphy.com/media/WgTBR9XVQCxjY7mDAT/giphy.gif)
 
 ## License:
-This Project is licensed under: ISC
+This Project is licensed under: [ISC License](./LICENSE)
 
 ## Contributing:
 Only Me(Keeezy)
