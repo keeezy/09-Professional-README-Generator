@@ -4,12 +4,12 @@
 This application utilzes [Node JS inquirer Library](https://www.npmjs.com/package/inquirer) to dynamically generate a professional README from the command line.
 
 ## Table of Contents
-* [Installation] (#installation)
-* [Usage] (#usage)
-* [License] (#license)
-* [Contributing] (#contributing)
-* [Tests] (#tests)
-* [Questions] (#questions)
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ## Installation Instructions
 Node JS, and dependencies
