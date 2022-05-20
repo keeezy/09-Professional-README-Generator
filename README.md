@@ -1,6 +1,33 @@
-# 09 Node.js Challenge: Professional README Generator
+# Professional README Generator
 
-## Acceptance Criteria
+## Description
+This application utilzes [Node JS inquirer Library](https://www.npmjs.com/package/inquirer) to dynamically generate a professional README from the command line.
+
+## Table of Contents
+* [Installation] (#installation)
+* [Usage] (#usage)
+* [License] (#license)
+* [Contributing] (#contributing)
+* [Tests] (#tests)
+* [Questions] (#questions)
+
+## Installation Instructions
+Node JS, and dependencies
+
+## Usage:
+
+## License:
+This Project is licensed under: ISC
+
+## Contributing:
+Only Me(Keeezy)
+
+## Tests:
+
+## Questions:
+If there are questions you can reach me via github/email. Listed below
+- https://github.com/keeezy
+- lazarokev@gmail.com
 
 ```md
 GIVEN a command-line application that accepts user input

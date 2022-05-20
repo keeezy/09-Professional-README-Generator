@@ -22,22 +22,16 @@ const questions = [
     {
         type: "input",
         name: "installation",
-        message: "What were the installation instructions?",
+        message: "What needs to be installed for the application to work?",
         default: "This is how you do it....dun dun dun",
 
     },
     {
         type: "input",
         name: "usage",
-        message: "Provide usage information",
+        message: "Please provide instructions and examples for use",
         default: "Many things were done",
 
-    },
-    {
-        type: "input",
-        name: "contributors",
-        message: "List your collaborators, if any, with links to their GitHub profiles.",
-        default: "Elon Musk",
     },
     {
         type: "list",
@@ -45,6 +39,18 @@ const questions = [
         message: "What license is used?",
         choices: ["APACHE 2.0", "BSL 1.0", "The Perl License", "None"],
 
+    },
+    {
+        type: "input",
+        name: "contributors",
+        message: "Were there any collaborators with this project? If so, list them here!",
+        default: "Elon Musk",
+    },
+    {
+        type: "input",
+        name: "tests",
+        message: "Write tests for your application. Then provide examples on how to run them here.",
+        default: "testing 1...2...3...",
     },
     {
         type: "input",
@@ -76,28 +82,38 @@ const createReadme = (readme) => {
     }
     
     
-    fs.writeFileSync("./README.md",
-        `# ${readme.title}
+fs.writeFileSync("./newREADME.md",
+`# ${readme.title}
 ${badge}
+
 ## Description
 ${readme.description}
-## Table of Contents
+
+## Table of Contents:
 * [Installation] (#installation)
 * [Usage] (#usage)
 * [License] (#license)
 * [Contributing] (#contributing)
 * [Tests] (#tests)
 * [Questions] (#questions)
-## Installation Instructions
+
+## Installation
 ${readme.installation}
-## Usage
+
+## Usage:
 ${readme.usage}
-## License
+
+## License:
 This Project is licensed under: ${readme.license}
-## Contributing
+
+## Contributing:
 ${readme.contributors}
-## Tests
-## Questions
+
+## Tests:
+${readme.tests}
+
+## Questions:
+If there are questions you can reach me via github/email. Listed below
 - https://github.com/${readme.username}
 - ${readme.email}
 
