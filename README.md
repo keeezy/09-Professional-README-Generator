@@ -15,7 +15,7 @@ This application utilzes [Node JS inquirer Library](https://www.npmjs.com/packag
 Node JS, and dependencies
 
 ## Usage:
-
+![](https://media.giphy.com/media/YgnB7mNml0Ol3WUmPf/giphy.gif)
 ## License:
 This Project is licensed under: ISC
 
